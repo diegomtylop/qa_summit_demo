@@ -1,0 +1,36 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="QA summit suite" verbose="1">
+
+    <!--A test pretending we don't have automation framework-->
+    <test name="TestNG Test" >
+        <classes>
+            <class name="com.globant.qasummit.tests.NavigationTest" />
+        </classes>
+    </test>
+
+    <!--Navigation with page object models-->
+    <test name="Test navigation to studios page" >
+        <parameter name="expectedStudios" value="22"/>
+        <classes>
+            <class name="com.globant.qasummit.tests.NavigationWithPageObjectTest" />
+        </classes>
+    </test>
+
+    <!--Multiple tests in a single class-->
+    <test name="Check contact form" >
+        <parameter name="expectedTitle" value="Contact Us"/>
+        <parameter name="expectedPhone" value="+18772155230"/>
+        <parameter name="expectedEmail" value="hi@globant.com"/>
+        <classes>
+            <class name="com.globant.qasummit.tests.ContactFormTest" />
+        </classes>
+    </test>
+
+    <!--Data Provider / Screenshots -->
+    <test name="Studio information" >
+        <classes>
+            <class name="com.globant.qasummit.tests.StudiosInformationTest" />
+        </classes>
+    </test>
+</suite>
